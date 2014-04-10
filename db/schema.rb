@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410171646) do
+ActiveRecord::Schema.define(version: 20140410191322) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20140410171646) do
     t.binary   "thumb"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "thumb_file_name"
+    t.string   "thumb_content_type"
+    t.integer  "thumb_file_size"
+    t.datetime "thumb_updated_at"
   end
 
 end

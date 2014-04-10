@@ -2,7 +2,7 @@
 <h3> new book </h3>
 <p>new_book_form.gif</p>
 
-<%= form_for :book, url: books_path do |f| %>
+<%= form_for :book, url: books_path, :html => {:multipart => true} do |f| %>
 	<p>
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>
@@ -30,7 +30,7 @@
 
 	<p>
 		<%=	f.label :thumb %><br>
-		<%=	f.text_field :thumb %>
+		<%=	f.file_field :thumb %>
 	</p>
 
 
