@@ -1,8 +1,9 @@
 <h2>Book <%= @book.id %> = <%= @book.title %> </h2> 
 
-<!--<img src="<%= @book.thumb%>"/>-->
 <%= image_tag @book.thumb.url(:medium) %>
 
 <p><b>Creator: </b><%= @book.creator %></p>
 <p><b>Publisher: </b><%= @book.publisher %></p>
 <p><b>Year of Publishing: </b><%= @book.year %></p>
+
+<%= link_to 'Back to books list', books_path %>

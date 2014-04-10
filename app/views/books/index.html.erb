@@ -1,0 +1,7 @@
+<h2>Books you have for viewing</h2>
+
+<% @books.each do |b| %>
+	<p><%= image_tag b.thumb.url(:thumb) %><b><a href="/books/<%= b.id %>"><%= b.title %></a></b> - by: <%= b.creator %></p>
+<% end %>
+
+<%= link_to 'Add New Book', new_book_path %>
