@@ -1,0 +1,42 @@
+<h1>Kiosk Viewer</h1>
+<h3> new book </h3>
+<p>new_book_form.gif</p>
+
+<%= form_for :book do |f| %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%=	f.label :creator %><br>
+		<%=	f.text_field :creator %>
+	</p>
+
+	<p>
+		<%= f.label :publisher %><br>
+		<%= f.text_field :publisher %>
+	</p>
+
+	<p>
+		<%=	f.label :year %><br>
+		<%=	f.text_field :year %>
+	</p>
+
+	<p>
+		<%=	f.label :image_path %><br>
+		<%=	f.text_field :image_path %>
+	</p>
+
+	<p>
+		<%=	f.label :thumb %><br>
+		<%=	f.text_field :thumb %>
+	</p>
+
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
+
