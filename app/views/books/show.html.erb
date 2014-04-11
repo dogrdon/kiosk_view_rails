@@ -6,4 +6,60 @@
 <p><b>Publisher: </b><%= @book.publisher %></p>
 <p><b>Year of Publishing: </b><%= @book.year %></p>
 
+
+<h3> Add pages </h3>
+<%= form_for([@book, @book.pages.build]) do |f| %>
+	
+	<p>
+		<%=	f.label :file %><br>
+		<%=	f.file_field :file %>
+	</p>
+
+	<p>
+		<%=	f.label :page_num %><br>
+		<%=	f.text_field :page_num %>
+	</p>
+
+	<p>
+		<%=	f.label :comment %><br>
+		<%=	f.text_area :comment %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>	
+
+
+<% end %>
+
+
+
+
 <%= link_to 'Back to books list', books_path %> | <%= link_to 'Edit', edit_book_path(@book) %>
+
+
+<h2> Pages </h2>
+
+<table>
+		<thead>
+			<tr><td>Page Number</td><td>Page Image</td><td>Comment</td></tr>
+		<thead>
+
+		<% @book.pages.each do |page| %>
+	
+		<tr>
+			<td>
+	
+				<%= page.page_num %>
+			</td>
+			<td>
+	
+				<%= image_tag page.file.url(:medium) %>
+			</td>
+
+			<td>
+				<%= page.comment %>
+			</td>
+		
+		</tr>
+		<% end %>
+</table>

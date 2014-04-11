@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410191322) do
+ActiveRecord::Schema.define(version: 20140411191856) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -27,5 +27,20 @@ ActiveRecord::Schema.define(version: 20140410191322) do
     t.integer  "thumb_file_size"
     t.datetime "thumb_updated_at"
   end
+
+  create_table "pages", force: true do |t|
+    t.binary   "file"
+    t.text     "comment"
+    t.string   "page_num"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
+  add_index "pages", ["book_id"], name: "index_pages_on_book_id"
 
 end

@@ -1,5 +1,7 @@
 class Book < ActiveRecord::Base
 
+	has_many :pages
+
 	has_attached_file :thumb, :styles => { :medium => "200x200>", :thumb => "90x90>" }, :defualt_url => "/public/images/nada.png"
 	validates_attachment_content_type :thumb, :content_type => /\Aimage\/.*\Z/
 
