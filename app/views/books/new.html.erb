@@ -3,16 +3,18 @@
 <p>new_book_form.gif</p>
 
 <%= form_for :book, url: books_path, :html => {:multipart => true} do |f| %>
-	<div class="error_msg">
+
 		<% if @book.errors.any? %>
-			<b><%= pluralize(@book.errors.count, "error") %> kept this book from being saved: </b>
-			<ul>
-				<% @book.errors.full_messages.each do |msg| %>
-					<li><%= msg %> </li>
-				<% end %>
-			</ul>
+			<div class="error_msg">
+				<b><%= pluralize(@book.errors.count, "error") %> kept this book from being saved: </b>
+				<ul>
+					<% @book.errors.full_messages.each do |msg| %>
+						<li><%= msg %> </li>
+					<% end %>
+				</ul>
+			</div>
 		<% end %>
-	</div>
+
 	<p>
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>
@@ -49,4 +51,3 @@
 	</p>
 
 <% end %>
-

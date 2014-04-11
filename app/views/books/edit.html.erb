@@ -1,0 +1,53 @@
+<h3> Edit a Book </h3>
+
+<%= form_for :book, url: book_path(@book), method: :patch do |f| %>
+
+  <% if @book.errors.any? %>
+    <div class="error_msg">
+      <b><%= pluralize(@book.errors.count, "error") %> kept from saving this book:</b>
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%=	f.label :creator %><br>
+    <%=	f.text_field :creator %>
+  </p>
+
+  <p>
+    <%= f.label :publisher %><br>
+    <%= f.text_field :publisher %>
+  </p>
+
+  <p>
+    <%=	f.label :year %><br>
+    <%=	f.text_field :year %>
+  </p>
+
+  <p>
+    <%=	f.label :image_path %><br>
+    <%=	f.text_field :image_path %>
+  </p>
+
+  <p>
+    <%=	f.label :thumb %><br>
+    <%=	f.file_field :thumb %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+
+<% end %>
