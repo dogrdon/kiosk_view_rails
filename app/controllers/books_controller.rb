@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
 
+	http_basic_authenticate_with name: "admin", password: "nyam1216", except: [:index, :show]
+
 	def new
 		@book = Book.new
 	end
