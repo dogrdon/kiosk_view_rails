@@ -1,0 +1,25 @@
+
+
+
+<tr>
+	<td>
+
+		<%= page.page_num %>
+	</td>
+	<td>
+
+		<%= image_tag page.file.url(:medium) %>
+	</td>
+
+	<td>
+		<%= page.comment %>
+	</td>
+
+	<td>
+		<%= link_to 'Delete Page', [page.book, page],
+					method: :delete,
+					data: { confirm: 'Are you sure?'} %>
+	</td>
+
+</tr>
+		
