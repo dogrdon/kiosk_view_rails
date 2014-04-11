@@ -1,7 +1,12 @@
 <h2>Books you have for viewing</h2>
 
 <% @books.each do |b| %>
-	<p><%= image_tag b.thumb.url(:thumb) %><b><a href="/books/<%= b.id %>"><%= b.title %></a></b> - by: <%= b.creator %>&nbsp; <%= link_to 'Edit', edit_book_path(b) %></p>
+	<p><%= image_tag b.thumb.url(:thumb) %><b><a href="/books/<%= b.id %>"><%= b.title %></a></b> - by: <%= b.creator %>&nbsp; 
+		<%= link_to 'Edit', edit_book_path(b) %> | 
+		<%= link_to 'Delete', book_path(b), 
+						   method: :delete, 
+						   data: { confirm: 'Are you sure you want to delete?' } %>
+	</p>
 <% end %>
 
 <%= link_to 'Add New Book', new_book_path %>
