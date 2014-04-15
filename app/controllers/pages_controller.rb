@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 
 	private
 		def page_params
-			params.require(:page).permit(:file, :page_num, :comment)
+			params.require(:page).permit(:file, :page_num, :comment, :image_path)
 		end
 	
 

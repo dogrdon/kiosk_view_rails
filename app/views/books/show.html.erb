@@ -6,6 +6,7 @@
 <p><b>Publisher: </b><%= @book.publisher %></p>
 <p><b>Year of Publishing: </b><%= @book.year %></p>
 
+<p><img src="<%= @book.image_path %>"/></p>
 
 <h3> Add pages </h3>
 <%= render "pages/form" %>
@@ -14,6 +15,7 @@
 
 
 <%= link_to 'Back to books list', books_path %> | <%= link_to 'Edit', edit_book_path(@book) %>
+
 
 
 <h2> Pages </h2>

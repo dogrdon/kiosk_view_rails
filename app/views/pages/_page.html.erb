@@ -5,7 +5,11 @@
 	</td>
 	<td>
 
-		<%= image_tag page.file.url(:medium) %>
+		<% unless page.file.blank? %> 
+			<%= image_tag page.file.url(:medium) %>
+		<% else %>
+			<img src="<%= page.image_path %>" />
+		<% end %>
 	</td>
 
 	<td>
@@ -20,3 +24,4 @@
 
 </tr>
 		
+
