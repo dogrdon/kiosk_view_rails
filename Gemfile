@@ -40,3 +40,7 @@ gem 'spring',        group: :development
 
 # use paperclip for image uploads
 gem 'paperclip', github: 'thoughtbot/paperclip'
+
+#add jquery lazy images for lazy loading of images
+gem 'jquery-lazy-images'
+
