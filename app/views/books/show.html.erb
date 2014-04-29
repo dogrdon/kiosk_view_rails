@@ -16,13 +16,24 @@
 
 <%= link_to 'Back to books list', books_path %> | <%= link_to 'Edit', edit_book_path(@book) %>
 
+<h2> View Flipbook </h2>
 
+<div id="flipbook">
+	<div class="hard"> Cover Image Goes Here</div>
+	<div class="hard"> In side Cover Image Goes Here</div>
 
-<h2> Pages </h2>
+	<%= render "pages/flipbook" %>
+
+	<div class="hard">Inside back image goes here</div>
+    <div class="hard">Back image goes here</div>
+
+</div>
+
+<!--<h2> View or edit Pages </h2>
 <table>
 		<thead>
 			<tr><td>Page Number</td><td>Page Image</td><td>Comment</td><td>Modify</td></tr>
 		<thead>
 
 			<%= render @book.pages %>
-</table>
+</table>-->
