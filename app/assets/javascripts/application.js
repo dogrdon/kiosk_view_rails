@@ -15,3 +15,11 @@
 //= require turbolinks
 //= require_tree .
 
+/*$("#flipbook").turn({
+    width: 400,
+    height: 300,
+    autoCenter: true
+});*/
+
+
+$("h2").fadeOut(800);
