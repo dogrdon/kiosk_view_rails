@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-	http_basic_authenticate_with name: "admin", password: "yourpass", only: [:create, :destroy]
+	#http_basic_authenticate_with name: "admin", password: "yourpass", only: [:create, :destroy]
 
 	def create
 		@book = Book.find(params[:book_id])
