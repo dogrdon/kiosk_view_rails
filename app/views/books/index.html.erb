@@ -1,12 +1,30 @@
-<h2>Books you have for viewing</h2>
+<div id="main">
+	<div id="container">
 
-<% @books.each do |b| %>
-	<p><%= image_tag b.thumb.url(:thumb) %><b><a href="/books/<%= b.id %>"><%= b.title %></a></b> - by: <%= b.creator %>&nbsp; 
-		<%= link_to 'Edit', edit_book_path(b) %> | 
-		<%= link_to 'Delete', book_path(b), 
-						   method: :delete, 
-						   data: { confirm: 'Are you sure you want to delete?' } %>
-	</p>
-<% end %>
 
-<%= link_to 'Add New Book', new_book_path %>
+		<h2>NYAM Books</h2>
+
+		<% @books.each do |b| %>
+			<div class="book-indice">
+				<p class="book-index">
+					<a href="/books/<%= b.id %>">
+						<%= image_tag b.thumb.url(:medium), :class => 'book_thumb' %>
+					</a>
+
+				</p>
+				<p><b><a href="/books/<%= b.id %>"><%= b.title %></a></b> </p>
+				<p><%= b.creator %>&nbsp;</p>
+				<p>	
+					<%= link_to 'Edit', edit_book_path(b) %> | 
+					<%= link_to 'Delete', book_path(b), 
+									   method: :delete, 
+									   data: { confirm: 'Are you sure you want to delete?' } %>
+				</p>
+			</div>
+		<% end %>
+
+		
+
+	</div><!-- #container -->
+
+</div> <!-- #main -->
