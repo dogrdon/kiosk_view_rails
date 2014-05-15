@@ -42,4 +42,10 @@ gem 'spring',        group: :development
 gem 'paperclip', github: 'thoughtbot/paperclip'
 
 
+#active admin for admin panel and authentication
+gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
+
+#dependancy for active admin
+gem 'meta_search'
+gem 'devise'
 
