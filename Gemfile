@@ -46,6 +46,6 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 
 #dependancy for active admin
-gem 'meta_search'
+#gem 'meta_search' #causes a session problem?
 gem 'devise'
 
