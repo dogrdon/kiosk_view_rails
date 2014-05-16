@@ -1,43 +1,39 @@
-<div id="container">
-		<h2>Book <%= @book.id %> = <%= @book.title %> </h2>
+<div id="main-book">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Book <%= @book.id %> = <%= @book.title %> </h2>
 
-		<%= image_tag @book.thumb.url(:medium) %>
+				<%= image_tag @book.thumb.url(:medium) %>
 
-		<p><b>Creator: </b><%= @book.creator %></p>
-		<p><b>Publisher: </b><%= @book.publisher %></p>
-		<p><b>Year of Publishing: </b><%= @book.year %></p>
-
-
-		<h3> Add pages </h3>
-		<%= render "pages/form" %>
-
-
+				<p><b>Creator: </b><%= @book.creator %></p>
+				<p><b>Publisher: </b><%= @book.publisher %></p>
+				<p><b>Year of Publishing: </b><%= @book.year %></p>
 
 
-		<%= link_to 'Back to books list', books_path %> | <%= link_to 'Edit', edit_book_path(@book) %>
 
-		<h2> View Flipbook </h2>
+				<%= link_to 'Back to books list', books_path %> | <%= link_to 'Edit', edit_book_path(@book) %>
+			</div> <!-- .span4 -->
 
-		<div id="flipbook">
-			<div class="hard"> Cover Image Goes Here</div>
-			<div class="hard"> In side Cover Image Goes Here</div>
+			<div class="col-sm-9">
+				
+				
 
-			<%= render "pages/flipbook" %>
+				<div id="flipbook">
+					<div class="hard"> Cover Image Goes Here</div>
+					<div class="hard"> In side Cover Image Goes Here</div>
 
-			<div class="hard">Inside back image goes here</div>
-		    <div class="hard">Back image goes here</div>
+					<%= render "pages/flipbook" %>
 
-		</div>
+					<div class="hard">Inside back image goes here</div>
+				    <div class="hard">Back image goes here</div>
 
-		<!--<h2> View or edit Pages </h2>
-		<table>
-				<thead>
-					<tr><td>Page Number</td><td>Page Image</td><td>Comment</td><td>Modify</td></tr>
-				<thead>
+				</div>
+			</div>
 
-					<%= render @book.pages %>
-		</table>-->
+			<%= javascript_include_tag "turn_pages" %>
 
-		<%= javascript_include_tag "turn_pages" %>
-
-</div> <!--Container-->
+		</div> <!-- .row -->
+	</div> <!--#container-->
+</div> <!-- #main -->

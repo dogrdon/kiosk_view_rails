@@ -49,3 +49,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 #gem 'meta_search' #causes a session problem?
 #gem 'devise'
 
+#bootstrap
+group :assets do
+  gem 'twitter-bootstrap-rails'
+end
