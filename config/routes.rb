@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'users/new'
+
+  match '/new_admin', to: 'users#new',  via: 'get'  
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

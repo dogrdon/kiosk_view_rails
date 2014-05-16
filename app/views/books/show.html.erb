@@ -2,10 +2,10 @@
 	
 	<div id="container-book"
 		<div class="row">
-			<div class="col-lg-3">
+			<div class="col-lg-3 book-info">
 				<h2>Book <%= @book.id %> = <%= @book.title %> </h2>
 
-				<%= image_tag @book.thumb.url(:medium) %>
+				<%= image_tag @book.thumb.url(:medium), :class => 'img-circle' %>
 
 				<p><b>Creator: </b><%= @book.creator %></p>
 				<p><b>Publisher: </b><%= @book.publisher %></p>
