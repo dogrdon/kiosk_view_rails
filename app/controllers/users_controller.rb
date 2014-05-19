@@ -7,8 +7,10 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			redirect_to @user
+			flash[:success] = "New user login created."
+			redirect_to books_path
 		else
+			flash[:error] = "Login Failed!"
 			render 'new'
 		end
 	end

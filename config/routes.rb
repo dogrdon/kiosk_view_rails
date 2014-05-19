@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   get 'users/new'
 
-  match '/new_admin', to: 'users#new',  via: 'get'  
+  
 
   get 'home/index'
 
@@ -25,6 +25,14 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  match '/signup', to: 'users#new',  via: 'get'  
+
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/login', to: 'sessions#new', via: 'get'
+  match '/logout', to: 'sessions#destroy', via: 'delete'
+
+
+
 
   # Example resource route with options:
   #   resources :products do

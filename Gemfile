@@ -53,3 +53,13 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 group :assets do
   gem 'twitter-bootstrap-rails'
 end
+
+#rspec for testing
+group :development, :test do
+	gem "rspec-rails"
+end
+
+group :test do
+	gem 'selenium-webdriver'
+	gem "capybara"
+end
