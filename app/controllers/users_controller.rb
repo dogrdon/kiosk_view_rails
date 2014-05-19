@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 			flash[:success] = "New user login created."
 			redirect_to books_path
 		else
-			flash[:error] = "Login Failed!"
+			flash[:error] = "New User Creation Failed!"
 			render 'new'
 		end
 	end
