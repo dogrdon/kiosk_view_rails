@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 		user = User.find_by(email: params[:session][:email].downcase)
 		if user && user.authenticate(params[:session][:password])
 			login(user)
+			flash[:success] = 'Thanks, you are now logged in'
 			redirect_to books_path
 		else
 			flash.now[:error] = 'Invalid email or password'
