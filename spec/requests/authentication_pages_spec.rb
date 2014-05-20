@@ -34,12 +34,17 @@ describe "Authentication" do
 	  	let(:user) { FactoryGirl.create(:user) }
 	  	before do
 	  		fill_in "Email", with: user.email.upcase
-	  		fill_in "Password", with: user.Password
-	  		click_button "Sign in"
+	  		fill_in "Password", with: user.password
+	  		click_button "Log in"
 	    end
 
 	    it { should have_title('Kiosk Viewer')}
 	    #could check other things on proper landing page.
+
+	    describe "followed by logout" do
+	    	before { click_link "Log Out"}
+	    	it { should have_link('Log In') }
+	    end
 
 	  end
   end
