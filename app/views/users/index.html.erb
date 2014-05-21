@@ -1,0 +1,15 @@
+<% provide(:title, 'All users | ')	%>
+<h2>List of all users</h2>
+
+<ul class="users">
+
+	<% @users.each do |user| %>
+		<li>
+			<%= link_to user.name, user %>
+			<% if current_user.admin? && !current_user?(user) %>
+				| <%= link_to "delete", user, method: :delete, data: { confirm: "Confirm deletion?" } %>
+
+			<% end %>
+		</li>
+	<% end %>
+</ul>
