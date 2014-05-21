@@ -7,8 +7,9 @@
 		<%= link_to 'New Book', new_book_path %>
 		<hr/>
 
-		
-		<%= link_to "Add a new user", signup_path, class: "btn btn-large btn-primary" %>
+		<!--<%# if current_user.admin? %>-->
+			<%= link_to "Add a new user", signup_path, class: "btn btn-large btn-primary" %>
+		<!--<%# end %>-->
 	</div><!-- #container -->
 
 </div> <!-- #main -->
