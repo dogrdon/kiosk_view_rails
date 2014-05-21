@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
 	#http_basic_authenticate_with name: "admin", password: "yourpass", except: [:index, :show]
+	before_action :admin_user, only: [:edit, :new]
 
 	def new
 		@book = Book.new
@@ -51,4 +52,9 @@ class BooksController < ApplicationController
 		def book_params
 			params.require(:book).permit(:title, :creator, :publisher, :year, :image_path, :thumb)
 		end
+
+		def admin_user
+			redirect_to(root_url) unless current_user.admin?
+		end
+
 end
