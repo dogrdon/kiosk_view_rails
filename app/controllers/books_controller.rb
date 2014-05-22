@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
 
-	#http_basic_authenticate_with name: "admin", password: "yourpass", except: [:index, :show]
+	layout "headless", only: [:show, :index]
 	before_action :admin_user, only: [:edit, :new]
+	
 
 	def new
 		@book = Book.new
