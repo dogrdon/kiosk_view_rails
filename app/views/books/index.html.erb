@@ -14,7 +14,7 @@
 				</p>
 				<p><b><a href="/books/<%= b.id %>"><%= b.title %></a></b> </p>
 				<p><%= b.creator %>&nbsp;</p>
-				<% if current_user.admin? && !current_user?(user) %>
+				<% if current_user.try(:admin?) %>
 					<p>	
 						<%= link_to 'Edit', edit_book_path(b) %> | 
 						<%= link_to 'Delete', book_path(b), 

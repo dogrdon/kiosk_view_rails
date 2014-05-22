@@ -3,13 +3,14 @@
 	<div id="container">
 		<h1>Kiosk Viewer <span class="glyphicon glyphicon-book"></span></h1>
 
-		<%= link_to 'List Of Books', controller: 'books' %> |
-		<%= link_to 'New Book', new_book_path %>
-		<hr/>
+		<%= link_to 'List Of Books', controller: 'books' %>
+		<% if current_user.try(:admin?) %>
+			 | <%= link_to 'New Book', new_book_path %>
+			<hr/>
 
-		<!--<%# if current_user.admin? %>-->
+		
 			<%= link_to "Add a new user", signup_path, class: "btn btn-large btn-primary" %>
-		<!--<%# end %>-->
+		<% end %>
 	</div><!-- #container -->
 
 </div> <!-- #main -->
